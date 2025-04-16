@@ -470,3 +470,14 @@ h1.hidden {
 .add-to-cart:hover {
     background: #555;
 }
+
+@media (max-width: 600px) {
+
+    .image {
+        height: 30vh;
+        /* Adjusted for better scaling on smaller screens */
+        min-width: 80vw;
+        /* Adjusted for better scaling on smaller screens */
+    }
+
+}
