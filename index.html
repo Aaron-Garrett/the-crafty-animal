@@ -1,0 +1,316 @@
+<html>
+
+<head>
+    <title>The Crafty Animal</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+    <div class="header">
+        <h1>The Crafty Animal</h1>
+    </div>
+    <div class="cart-icon" onclick="toggleCart()">
+        <img src="img/cart.png" alt="Cart">
+        <span class="cart-count">0</span>
+    </div>
+    <div class="cart-modal">
+        <button class="close-cart" onclick="toggleCart()" style="float: right;">X</button>
+        <h2>Shopping Cart</h2>
+        <div id="cart-items"></div>
+        <div id="cart-total">Total: $0</div>
+        <div id="paypal-button-container"></div>
+    </div>
+    <script src="https://www.paypal.com/sdk/js?client-id=YOUR_CLIENT_ID"></script>
+    <script>
+        paypal.Buttons({
+            createOrder: function(data, actions) {
+                return actions.order.create({
+                    purchase_units: [{
+                        amount: {
+                            value: cart.reduce((sum, item) => sum + item.price, 0)
+                        }
+                    }]
+                });
+            },
+            onApprove: function(data, actions) {
+                return actions.order.capture().then(function(details) {
+                    alert('Transaction completed by ' + details.payer.name.given_name);
+                    cart.length = 0; // Clear the cart
+                    updateCart();
+                    toggleCart();
+                });
+            }
+        }).render('#paypal-button-container');
+    </script>
+    <div class="filters">
+        <div class="filter-item">
+            <p>State Shape</p>
+            <div class="filter-icon">
+                <button><img src="img/white-filter-3-line.svg" alt="Filter Icon"></button>
+                <div class="filter-dropdown-content">
+                    <select onchange="toggleFilter(this.value, 'shape')" data-category="shape">
+                        <option value="">Select State Shape</option>
+                        <option value="indiana-shaped">Indiana Shaped</option>
+                        <option value="kentucky-shaped">Kentucky Shaped</option>
+                        <option value="iowa-shaped">Iowa Shaped</option>
+                        <option value="south-carolina-shaped">South Carolina Shaped</option>
+                        <option value="texas-shaped">Texas Shaped</option>
+                        <option value="georgia-shaped">Georgia Shaped</option>
+                        <option value="usa-shaped">USA Shaped</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="filter-item">
+            <p>Topic</p>
+            <div class="filter-icon">
+                <button><img src="img/white-filter-3-line.svg" alt="Filter Icon"></button>
+                <div class="filter-dropdown-content">
+                    <select onchange="toggleFilter(this.value, 'topic')" data-category="topic">
+                        <option value="">Select Topic</option>
+                        <option value="college-sports">College Sports</option>
+                        <option value="nature">Nature</option>
+                        <option value="drinking">Drinking</option>
+                        <option value="america">America</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="filter-item">
+            <p>College</p>
+            <div class="filter-icon">
+                <button><img src="img/white-filter-3-line.svg" alt="Filter Icon"></button>
+                <div class="filter-dropdown-content">
+                    <select onchange="toggleFilter(this.value, 'college')" data-category="college">
+                        <option value="">Select College</option>
+                        <option value="iu">IU</option>
+                        <option value="purdue">Purdue</option>
+                        <option value="ohio-state">Ohio State</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="filter-item">
+            <button onclick="removeFilters()">Remove Filters</button>
+        </div>
+    </div>
+    <h1 class="college sports">College Sports Images</h1>
+    <div class="image-container">
+        <div class="image iu college-sports indiana-shaped">
+            <img src="img/iu_gnome.png" alt="IU Gnome" class="img-responsive">
+            <p class="title">IU Gnome (Indiana)</p>
+            <p class="price">$45</p>
+            <button class="add-to-cart" onclick="addToCart('IU Gnome', 45, 'img/iu_gnome.png')">Add to Cart</button>
+        </div>
+        <div class="image iu college-sports indiana-shaped">
+            <img src="img/iu_football.png" alt="Football" class="img-responsive">
+            <p class="title">IU Football (Indiana)</p>
+            <p class="price">$45</p>
+            <button class="add-to-cart" onclick="addToCart('IU Football', 45, 'img/iu_football.png')">Add to Cart</button>
+        </div>
+        <div class="image purdue college-sports indiana-shaped">
+            <img src="img/purdue_gon.png" alt="Purdue Gnome" class="img-responsive">
+            <p class="title">Purdue Gnome (Indiana)</p>
+            <p class="price">$45</p>
+            <button class="add-to-cart" onclick="addToCart('Purdue Gnome', 45, 'img/purdue_gon.png')">Add to Cart</button>
+        </div>
+        <div class="image purdue college-sports indiana-shaped">
+            <img src="img/boiler_train.png" alt="Boiler Train" class="img-responsive">
+            <p class="title">Boiler Train (Indiana)</p>
+            <p class="price">$45</p>
+            <button class="add-to-cart" onclick="addToCart('Boiler Train', 45, 'img/boiler_train.png')">Add to Cart</button>
+        </div>
+        <div class="image ohio-state college-sports indiana-shaped">
+            <img src="img/buckey_champs.png" alt="Ohio State Buckey Champs" class="img-responsive">
+            <p class="title">Buckeye State Champions (Ohio)</p>
+            <p class="price">$45</p>
+            <button class="add-to-cart" onclick="addToCart('Buckeye State Champions', 45, 'img/buckey_champs.png')">Add to Cart</button>
+        </div>
+    </div>
+    <h1 class="nature">Nature Images</h1>
+    <div class="image-container">
+        <div class="image nature iowa-shaped">
+            <img src="img/deer_home.png" alt="Iowa Hunting for Home" class="img-responsive">
+            <p class="title">Hunting for Home (Iowa)</p>
+            <p class="price">$45</p>
+            <button class="add-to-cart" onclick="addToCart('Hunting for Home', 45, 'img/deer_home.png')">Add to Cart</button>
+        </div>
+        <div class="image nature indiana-shaped">
+            <img src="img/cardinal.png" alt="Indiana Cardinal" class="img-responsive">
+            <p class="title">Cardinal (Indiana)</p>
+            <p class="price">$45</p>
+            <button class="add-to-cart" onclick="addToCart('Cardinal', 45, 'img/cardinal.png')">Add to Cart</button>
+        </div>
+    </div>
+    <h1 class="drinking">Drinking Images</h1>
+    <div class="image-container">
+        <div class="image drinking kentucky-shaped">
+            <img src="img/bourbon_state.png" alt="Bourbon State" class="img-responsive">
+            <p class="title">Bourboun State (Kentucky)</p>
+            <p class="price">$45</p>
+            <button class="add-to-cart" onclick="addToCart('Bourboun State', 45, 'img/bourbon_state.png')">Add to Cart</button>
+        </div>
+        <div class="image drinking indiana-shaped">
+            <img src="img/indiana_wine_pour.png" alt="Indiana Wine Pour" class="img-responsive">
+            <p class="title">Wine Pour (Indiana)</p>
+            <p class="price">$45</p>
+            <button class="add-to-cart" onclick="addToCart('Wine Pour', 45, 'img/indiana_wine_pour.png')">Add to Cart</button>
+        </div>
+        <div class="image drinking iowa-shaped">
+            <img src="img/iowa_drink_local.png" alt="Iowa Drink Local" class="img-responsive">
+            <p class="title">Drink Local (Iowa)</p>
+            <p class="price">$45</p>
+            <button class="add-to-cart" onclick="addToCart('Drink Local', 45, 'img/iowa_drink_local.png')">Add to Cart</button>
+        </div>
+        <div class="image drinking south-carolina-shaped">
+            <img src="img/sc_drink_local.png" alt="South Carolina Drink Local" class="img-responsive">
+            <p class="title">Drink Local (South Carolina)</p>
+            <p class="price">$45</p>
+            <button class="add-to-cart" onclick="addToCart('Drink Local', 45, 'img/sc_drink_local.png')">Add to Cart</button>
+        </div>
+        <div class="image drinking texas-shaped">
+            <img src="img/texas_wine.png" alt="Texas Wine Pour" class="img-responsive">
+            <p class="title">Wine Pour (Texas)</p>
+            <p class="price">$45</p>
+            <button class="add-to-cart" onclick="addToCart('Wine Pour', 45, 'img/texas_wine.png')">Add to Cart</button>
+        </div>
+        <div class="image drinking indiana-shaped">
+            <img src="img/indiana_drink_local.png" alt="Indiana Drink Local" class="img-responsive">
+            <p class="title">Drink Local (Indiana)</p>
+            <p class="price">$45</p>
+            <button class="add-to-cart" onclick="addToCart('Drink Local', 45, 'img/indiana_drink_local.png')">Add to Cart</button>
+        </div>
+        <div class="image drinking georgia-shaped">
+            <img src="img/georgia_wine.png" alt="Georgia Wine Pour" class="img-responsive">
+            <p class="title">Wine Pour (Georgia)</p>
+            <p class="price">$45</p>
+            <button class="add-to-cart" onclick="addToCart('Wine Pour', 45, 'img/georgia_wine.png')">Add to Cart</button>
+        </div>
+    </div>
+    <h1 class="america">America Images</h1>
+    <div class="image-container">
+        <div class="image america usa-shaped">
+            <img src="img/colors_reload.png" alt="Colors Reload" class="img-responsive">
+            <p class="title">These Colors Reload (USA)</p>
+            <p class="price">$60</p>
+            <button class="add-to-cart" onclick="addToCart('These Colors Reload', 60, 'img/colors_reload.png')">Add to Cart</button>
+        </div>
+        <div class="image america usa-shaped">
+            <img src="img/home_of_the_brave.png" alt="Home of the Brave" class="img-responsive">
+            <p class="title">Home of the Brave (USA)</p>
+            <p class="price">$60</p>
+            <button class="add-to-cart" onclick="addToCart('Home of the Brave', 60, 'img/home_of_the_brave.png')">Add to Cart</button>
+        </div>
+    </div>
+    <script>
+        const activeFilters = {
+            shape: '',
+            topic: '',
+            college: ''
+        };
+
+        function toggleFilter(tag, category) {
+            if (tag === '') {
+                delete activeFilters[category];
+            } else {
+                activeFilters[category] = tag;
+            }
+            filterImages();
+            filterHeaders();
+            
+            // Reset select to empty if clicking same option
+            const selects = document.querySelectorAll('select');
+            selects.forEach(select => {
+                if (select.dataset.category === category && select.value === tag) {
+                    if (tag === '') {
+                        select.selectedIndex = 0;
+                    }
+                }
+            });
+        }
+
+        function filterImages() {
+            const images = document.querySelectorAll('.image');
+            const activeFilterValues = Object.values(activeFilters).filter(Boolean);
+            
+            images.forEach(image => {
+                const imageTags = image.className.split(' ').slice(1);
+                const matches = activeFilterValues.every(filter => imageTags.includes(filter));
+                if (matches || activeFilterValues.length === 0) {
+                    image.classList.add('show');
+                } else {
+                    image.classList.remove('show');
+                }
+            });
+        }
+
+        function filterHeaders() {
+            const headers = document.querySelectorAll('h1:not(.header h1)');
+            const activeFilterValues = Object.values(activeFilters).filter(Boolean);
+            
+            headers.forEach(header => {
+                const headerClasses = header.className.split(' ');
+                if (activeFilterValues.length === 0) {
+                    header.classList.remove('hidden');
+                } else {
+                    const matches = activeFilterValues.some(filter => headerClasses.includes(filter));
+                    if (matches) {
+                        header.classList.remove('hidden');
+                    } else {
+                        header.classList.add('hidden');
+                    }
+                }
+            });
+        }
+
+        function removeFilters() {
+            Object.keys(activeFilters).forEach(key => delete activeFilters[key]);
+            const selects = document.querySelectorAll('select');
+            selects.forEach(select => select.selectedIndex = 0);
+            filterImages();
+            filterHeaders();
+        }
+
+        // Show all images and headers by default
+        filterImages();
+        filterHeaders();
+
+        const cart = [];
+        
+        function toggleCart() {
+            const modal = document.querySelector('.cart-modal');
+            modal.style.display = modal.style.display === 'block' ? 'none' : 'block';
+        }
+
+        function addToCart(name, price, image) {
+            cart.push({ name, price, image });
+            updateCart();
+        }
+
+        function updateCart() {
+            const cartItems = document.getElementById('cart-items');
+            const cartCount = document.querySelector('.cart-count');
+            const cartTotal = document.getElementById('cart-total');
+            
+            cartCount.textContent = cart.length;
+            
+            cartItems.innerHTML = cart.map(item => `
+                <div class="cart-item">
+                    <img src="${item.image}" alt="${item.name}">
+                    <div>
+                        <p>${item.name}</p>
+                        <p>$${item.price}</p>
+                    </div>
+                </div>
+            `).join('');
+            
+            const total = cart.reduce((sum, item) => sum + item.price, 0);
+            cartTotal.textContent = `Total: $${total}`;
+        }
+    </script>
+</body>
+
+</html>
