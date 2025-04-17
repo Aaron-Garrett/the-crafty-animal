@@ -474,20 +474,29 @@ h1.hidden {
 @media (max-width: 600px) {
 
     .image {
-        height: 30vh;
+        height: 40vh;
         /* Adjusted for better scaling on smaller screens */
         min-width: 80vw;
         /* Adjusted for better scaling on smaller screens */
     }
 
     .image-container img {
-        height: 30vh;
+        height: 40vh;
         /* Adjusted for better scaling on smaller screens */
         min-width: 80vw;
         /* Adjusted for better scaling on smaller screens */
     }
     .header h1 {
         font-size: 3rem;
+        /* Adjusted for better scaling on smaller screens */
+    }
+
+    .image .title {
+        font-size: 2vh;
+        /* Adjusted for better scaling on smaller screens */
+    }
+    .image .price {
+        font-size: 1.5vh;
         /* Adjusted for better scaling on smaller screens */
     }
 
