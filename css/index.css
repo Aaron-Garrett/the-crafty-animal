@@ -474,14 +474,14 @@ h1.hidden {
 @media (max-width: 600px) {
 
     .image {
-        height: 40vh;
+        height: 45vh;
         /* Adjusted for better scaling on smaller screens */
         min-width: 80vw;
         /* Adjusted for better scaling on smaller screens */
     }
 
     .image-container img {
-        height: 40vh;
+        height: 45vh;
         /* Adjusted for better scaling on smaller screens */
         min-width: 80vw;
         /* Adjusted for better scaling on smaller screens */
