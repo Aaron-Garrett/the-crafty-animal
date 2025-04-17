@@ -480,4 +480,15 @@ h1.hidden {
         /* Adjusted for better scaling on smaller screens */
     }
 
+    .image-container img {
+        height: 30vh;
+        /* Adjusted for better scaling on smaller screens */
+        min-width: 80vw;
+        /* Adjusted for better scaling on smaller screens */
+    }
+    .header h1 {
+        font-size: 3rem;
+        /* Adjusted for better scaling on smaller screens */
+    }
+
 }
