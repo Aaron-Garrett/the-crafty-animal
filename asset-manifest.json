@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/the-crafty-animal/static/css/main.0fb106b4.css",
-    "main.js": "/the-crafty-animal/static/js/main.9c58af86.js",
+    "main.js": "/the-crafty-animal/static/js/main.da791068.js",
     "static/js/453.e7679c7d.chunk.js": "/the-crafty-animal/static/js/453.e7679c7d.chunk.js",
     "static/media/viking.png": "/the-crafty-animal/static/media/viking.daa34dd0dfb99a3541cd.png",
     "static/media/roll_tide.png": "/the-crafty-animal/static/media/roll_tide.a450678c1fa950bca973.png",
@@ -13,11 +13,11 @@
     "static/media/artist.jpg": "/the-crafty-animal/static/media/artist.a0acc4a7bd225cb4ffbe.jpg",
     "index.html": "/the-crafty-animal/index.html",
     "main.0fb106b4.css.map": "/the-crafty-animal/static/css/main.0fb106b4.css.map",
-    "main.9c58af86.js.map": "/the-crafty-animal/static/js/main.9c58af86.js.map",
+    "main.da791068.js.map": "/the-crafty-animal/static/js/main.da791068.js.map",
     "453.e7679c7d.chunk.js.map": "/the-crafty-animal/static/js/453.e7679c7d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.0fb106b4.css",
-    "static/js/main.9c58af86.js"
+    "static/js/main.da791068.js"
   ]
 }
