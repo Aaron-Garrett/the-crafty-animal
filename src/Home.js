@@ -11,7 +11,7 @@ function Home() {
 
         if (numberOfStates < 24) {
             timers.push(setTimeout(() => {
-                setNumberOfStates(numberOfStates + 2);
+                setNumberOfStates(numberOfStates + 2);``
             }, 100));
         }
         if (numberOfSports < 12) {
