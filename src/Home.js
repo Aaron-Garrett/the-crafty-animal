@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import './css/Home.css';
+import './Products';
 
 function Home() {
     const [numberOfStates, setNumberOfStates] = useState(0);
