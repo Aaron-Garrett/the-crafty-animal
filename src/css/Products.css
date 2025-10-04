@@ -1,0 +1,74 @@
+header {
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.8), #b8b7b7 85%);
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-item {
+    margin: 24px 0;
+    max-height: 50vh;
+    object-fit: scale-down;
+    display: block; /* Ensures block-level behavior */
+    padding: 12px 0; /* Adds internal spacing */
+}
+
+.product-item img {
+    width: 100%;
+    height: 100%;
+}
+
+/* Add this if the parent is using display: flex or grid */
+.product-grid {
+    gap: 24px; /* Creates space between flex/grid items */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.filters-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    width: 100%;
+    gap: 16px;
+    margin: 20px 0;
+}
+
+button {
+    border-radius: 8px;
+    padding: 3px 8px;
+}
+
+.active {
+    background-color: #1c7dba;
+    color: white;
+}
+
+.filter-selection {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    width: auto;
+    gap: 16px;
+}
+
+.filter-icon {
+    padding: 7px;
+}
+
+.filter-options {
+    display: none;
+    justify-content: center;
+    flex-direction: row;
+    width: auto;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.filter-options#teams.selected,
+.filter-options#categories.selected,
+.filter-options#schools.selected,
+.filter-options#states.selected {
+    display: flex;
+}

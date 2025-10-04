@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import './css/Home.css';
-import './Products';
 
 function Home() {
     const [numberOfStates, setNumberOfStates] = useState(0);
@@ -69,12 +68,12 @@ function Home() {
                 <article>
                     <h2>Featured Items</h2>
                     <div className="featured-items">
-                        <img className="item" src={(require('./img/hoosier_football.png'))} alt="Item 1" />
-                        <img className="item" src={(require('./img/packers.png'))} alt="Item 2" />
-                        <img className="item" src={(require('./img/viking.png'))} alt="Item 3" />
-                        <img className="item" src={(require('./img/roll_tide.png'))} alt="Item 4" />
-                        <img className="item" src={(require('./img/fishing.png'))} alt="Item 5" />
-                        <img className="item" src={(require('./img/iu.png'))} alt="Item 6" />
+                        <img className="item" src={(require('./img/IU_Football.png'))} alt="Item 1" />
+                        <img className="item" src={(require('./img/Packers.png'))} alt="Item 2" />
+                        <img className="item" src={(require('./img/Viking.png'))} alt="Item 3" />
+                        <img className="item" src={(require('./img/Roll_Tide.png'))} alt="Item 4" />
+                        <img className="item" src={(require('./img/Fishing.png'))} alt="Item 5" />
+                        <img className="item" src={(require('./img/IU.png'))} alt="Item 6" />
                     </div>
                 </article>
 
