@@ -1,0 +1,10 @@
+[
+    {"Name": "Fishing", "States": ["Indiana", "Kentucky", "Ohio"], "Categories": ["nature", "fishing", "all-products"]},
+    {"Name": "IU", "States": ["Indiana", "Kentucky", "Ohio"], "Categories": ["iu", "sports", "college", "all-products"]},
+    {"Name": "IU_Football", "States": ["Indiana", "Kentucky", "Ohio"], "Categories": ["iu", "sports", "college", "all-products"]},
+    {"Name": "Cardinal", "States": ["Indiana", "Kentucky", "Ohio"], "Categories": ["nature", "birds", "all-products"]},
+    {"Name": "Eagles", "States": ["Indiana", "Kentucky", "Ohio"], "Categories": ["sports", "professional", "all-products"]},
+    {"Name": "Viking", "States": ["Indiana", "Kentucky", "Ohio"], "Categories": ["sports", "professional", "all-products"]},
+    {"Name": "Roll_Tide", "States": ["Indiana", "Kentucky", "Ohio"], "Categories": ["college", "sports", "all-products"]},
+    {"Name": "Packers", "States": ["Indiana", "Wisconsin"], "Categories": ["sports", "professional", "all-products"]}
+]

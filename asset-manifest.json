@@ -1,23 +1,26 @@
 {
   "files": {
-    "main.css": "/the-crafty-animal/static/css/main.0fb106b4.css",
-    "main.js": "/the-crafty-animal/static/js/main.598eaf88.js",
+    "main.css": "/the-crafty-animal/static/css/main.dfdb0086.css",
+    "main.js": "/the-crafty-animal/static/js/main.c88450e4.js",
     "static/js/453.e7679c7d.chunk.js": "/the-crafty-animal/static/js/453.e7679c7d.chunk.js",
-    "static/media/viking.png": "/the-crafty-animal/static/media/viking.daa34dd0dfb99a3541cd.png",
-    "static/media/roll_tide.png": "/the-crafty-animal/static/media/roll_tide.a450678c1fa950bca973.png",
-    "static/media/packers.png": "/the-crafty-animal/static/media/packers.5ff81f4480c5e4855c76.png",
-    "static/media/hoosier_football.png": "/the-crafty-animal/static/media/hoosier_football.9d7b957072178311a11c.png",
-    "static/media/iu.png": "/the-crafty-animal/static/media/iu.ede70846f80095fb3da9.png",
-    "static/media/fishing.png": "/the-crafty-animal/static/media/fishing.76804305b09f1a473315.png",
+    "static/media/eagles.png": "/the-crafty-animal/static/media/eagles.045d6c61e62b6cda4d9e.png",
+    "static/media/Vikings.png": "/the-crafty-animal/static/media/Vikings.daa34dd0dfb99a3541cd.png",
+    "static/media/RollTide.png": "/the-crafty-animal/static/media/RollTide.a450678c1fa950bca973.png",
+    "static/media/Packers.png": "/the-crafty-animal/static/media/Packers.5ff81f4480c5e4855c76.png",
+    "static/media/IU_Football.png": "/the-crafty-animal/static/media/IU_Football.9d7b957072178311a11c.png",
+    "static/media/HometownRoots.png": "/the-crafty-animal/static/media/HometownRoots.ede70846f80095fb3da9.png",
+    "static/media/GoingFishing.png": "/the-crafty-animal/static/media/GoingFishing.76804305b09f1a473315.png",
+    "static/media/desktop_splash.png": "/the-crafty-animal/static/media/desktop_splash.e62d2056a80095b478c3.png",
+    "static/media/Cardinal.png": "/the-crafty-animal/static/media/Cardinal.29b58fd6b73b739135a1.png",
     "static/media/splashscreen.png": "/the-crafty-animal/static/media/splashscreen.29b58fd6b73b739135a1.png",
     "static/media/artist.jpg": "/the-crafty-animal/static/media/artist.a0acc4a7bd225cb4ffbe.jpg",
     "index.html": "/the-crafty-animal/index.html",
-    "main.0fb106b4.css.map": "/the-crafty-animal/static/css/main.0fb106b4.css.map",
-    "main.598eaf88.js.map": "/the-crafty-animal/static/js/main.598eaf88.js.map",
+    "main.dfdb0086.css.map": "/the-crafty-animal/static/css/main.dfdb0086.css.map",
+    "main.c88450e4.js.map": "/the-crafty-animal/static/js/main.c88450e4.js.map",
     "453.e7679c7d.chunk.js.map": "/the-crafty-animal/static/js/453.e7679c7d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.0fb106b4.css",
-    "static/js/main.598eaf88.js"
+    "static/css/main.dfdb0086.css",
+    "static/js/main.c88450e4.js"
   ]
 }
