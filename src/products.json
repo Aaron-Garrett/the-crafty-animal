@@ -4,7 +4,7 @@
     {"Name": "IU_Football", "States": ["Indiana", "Kentucky", "Ohio"], "Categories": ["iu", "sports", "college", "all-products", "hoosiers", "indiana"]},
     {"Name": "Cardinal", "States": ["Indiana", "Kentucky", "Ohio"], "Categories": ["nature", "birds", "all-products", "indiana", "kentucky"]},
     {"Name": "Eagles", "States": ["Indiana", "Kentucky", "Ohio"], "Categories": ["sports", "professional", "all-products", "eagles", "california", "indiana", "ohio"]},
-    {"Name": "Viking", "States": ["Indiana", "Kentucky", "Ohio"], "Categories": ["sports", "professional", "all-products", "viking", "indiana", "kentucky", "minnesota"]},
+    {"Name": "Vikings", "States": ["Indiana", "Kentucky", "Ohio"], "Categories": ["sports", "professional", "all-products", "viking", "indiana", "kentucky", "minnesota"]},
     {"Name": "Roll_Tide", "States": ["Indiana", "Kentucky", "Alabama"], "Categories": ["college", "sports", "all-products", "elephants", "indiana", "alabama", "alabama-state"]},
-    {"Name": "Packer", "States": ["Indiana", "Wisconsin"], "Categories": ["sports", "professional", "all-products", "packers", "indiana", "wisconsin"]}
+    {"Name": "Packers", "States": ["Indiana", "Wisconsin"], "Categories": ["sports", "professional", "all-products", "packers", "indiana", "wisconsin"]}
 ]
