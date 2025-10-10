@@ -69,7 +69,6 @@ function Products() {
             return true;
         });
         setFilteredProducts(results);
-        console.log(`Filtered products:`, filteredProducts);
     }, [filters, productData]);
 
     return (
