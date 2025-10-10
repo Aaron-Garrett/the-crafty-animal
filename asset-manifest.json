@@ -1,9 +1,9 @@
 {
   "files": {
     "main.css": "/the-crafty-animal/static/css/main.dfdb0086.css",
-    "main.js": "/the-crafty-animal/static/js/main.c88450e4.js",
+    "main.js": "/the-crafty-animal/static/js/main.1979ca6a.js",
     "static/js/453.e7679c7d.chunk.js": "/the-crafty-animal/static/js/453.e7679c7d.chunk.js",
-    "static/media/eagles.png": "/the-crafty-animal/static/media/eagles.045d6c61e62b6cda4d9e.png",
+    "static/media/Eagle.png": "/the-crafty-animal/static/media/Eagle.045d6c61e62b6cda4d9e.png",
     "static/media/Vikings.png": "/the-crafty-animal/static/media/Vikings.daa34dd0dfb99a3541cd.png",
     "static/media/RollTide.png": "/the-crafty-animal/static/media/RollTide.a450678c1fa950bca973.png",
     "static/media/Packers.png": "/the-crafty-animal/static/media/Packers.5ff81f4480c5e4855c76.png",
@@ -16,11 +16,11 @@
     "static/media/artist.jpg": "/the-crafty-animal/static/media/artist.a0acc4a7bd225cb4ffbe.jpg",
     "index.html": "/the-crafty-animal/index.html",
     "main.dfdb0086.css.map": "/the-crafty-animal/static/css/main.dfdb0086.css.map",
-    "main.c88450e4.js.map": "/the-crafty-animal/static/js/main.c88450e4.js.map",
+    "main.1979ca6a.js.map": "/the-crafty-animal/static/js/main.1979ca6a.js.map",
     "453.e7679c7d.chunk.js.map": "/the-crafty-animal/static/js/453.e7679c7d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.dfdb0086.css",
-    "static/js/main.c88450e4.js"
+    "static/js/main.1979ca6a.js"
   ]
 }
