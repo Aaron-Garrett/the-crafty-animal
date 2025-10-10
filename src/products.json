@@ -1,6 +1,6 @@
 [
     {"Name": "GoingFishing", "States": ["Indiana", "Kentucky", "Ohio"], "Categories": ["nature", "fishing", "all-products", "indiana", "kentucky"]},
-    {"Name": "IU", "States": ["Indiana", "Kentucky", "Ohio"], "Categories": ["iu", "sports", "college", "all-products", "hoosiers", "indiana"]},
+    {"Name": "HometownRoots", "States": ["Indiana", "Kentucky", "Ohio"], "Categories": ["iu", "sports", "college", "all-products", "hoosiers", "indiana"]},
     {"Name": "IU_Football", "States": ["Indiana", "Kentucky", "Ohio"], "Categories": ["iu", "sports", "college", "all-products", "hoosiers", "indiana"]},
     {"Name": "Cardinal", "States": ["Indiana", "Kentucky", "Ohio"], "Categories": ["nature", "birds", "all-products", "indiana", "kentucky"]},
     {"Name": "Eagles", "States": ["Indiana", "Kentucky", "Ohio"], "Categories": ["sports", "professional", "all-products", "eagles", "california", "indiana", "ohio"]},

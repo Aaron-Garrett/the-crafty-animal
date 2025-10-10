@@ -73,7 +73,7 @@ function Home() {
                         <img className="item" src={(require('./img/Vikings.png'))} alt="Item 3" />
                         <img className="item" src={(require('./img/RollTide.png'))} alt="Item 4" />
                         <img className="item" src={(require('./img/GoingFishing.png'))} alt="Item 5" />
-                        <img className="item" src={(require('./img/IU.png'))} alt="Item 6" />
+                        <img className="item" src={(require('./img/HometownRoots.png'))} alt="Item 6" />
                     </div>
                 </article>
 
