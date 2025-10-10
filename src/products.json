@@ -6,5 +6,5 @@
     {"Name": "Eagles", "States": ["Indiana", "Kentucky", "Ohio"], "Categories": ["sports", "professional", "all-products", "eagles", "california", "indiana", "ohio"]},
     {"Name": "Viking", "States": ["Indiana", "Kentucky", "Ohio"], "Categories": ["sports", "professional", "all-products", "viking", "indiana", "kentucky", "minnesota"]},
     {"Name": "Roll_Tide", "States": ["Indiana", "Kentucky", "Alabama"], "Categories": ["college", "sports", "all-products", "elephants", "indiana", "alabama", "alabama-state"]},
-    {"Name": "Packers", "States": ["Indiana", "Wisconsin"], "Categories": ["sports", "professional", "all-products", "packers", "indiana", "wisconsin"]}
+    {"Name": "Packer", "States": ["Indiana", "Wisconsin"], "Categories": ["sports", "professional", "all-products", "packers", "indiana", "wisconsin"]}
 ]
