@@ -1,14 +1,17 @@
 {
   "files": {
     "main.css": "/the-crafty-animal/static/css/main.dfdb0086.css",
-    "main.js": "/the-crafty-animal/static/js/main.ea1ac803.js",
+    "main.js": "/the-crafty-animal/static/js/main.7864591f.js",
     "static/js/453.e7679c7d.chunk.js": "/the-crafty-animal/static/js/453.e7679c7d.chunk.js",
     "static/media/Eagles.png": "/the-crafty-animal/static/media/Eagles.045d6c61e62b6cda4d9e.png",
     "static/media/Vikings.png": "/the-crafty-animal/static/media/Vikings.daa34dd0dfb99a3541cd.png",
     "static/media/RollTide.png": "/the-crafty-animal/static/media/RollTide.a450678c1fa950bca973.png",
     "static/media/Packers.png": "/the-crafty-animal/static/media/Packers.5ff81f4480c5e4855c76.png",
+    "static/media/Packers_Wisconsin.png": "/the-crafty-animal/static/media/Packers_Wisconsin.5ff81f4480c5e4855c76.png",
     "static/media/IU_Football.png": "/the-crafty-animal/static/media/IU_Football.9d7b957072178311a11c.png",
+    "static/media/IU_Football_Indiana.png": "/the-crafty-animal/static/media/IU_Football_Indiana.9d7b957072178311a11c.png",
     "static/media/HometownRoots.png": "/the-crafty-animal/static/media/HometownRoots.ede70846f80095fb3da9.png",
+    "static/media/HometownRoots_Indiana.png": "/the-crafty-animal/static/media/HometownRoots_Indiana.ede70846f80095fb3da9.png",
     "static/media/Fishing_Indiana.png": "/the-crafty-animal/static/media/Fishing_Indiana.76804305b09f1a473315.png",
     "static/media/Drink_Local_Iowa.png": "/the-crafty-animal/static/media/Drink_Local_Iowa.ddef6384d20ae8af1912.png",
     "static/media/desktop_splash.png": "/the-crafty-animal/static/media/desktop_splash.e62d2056a80095b478c3.png",
@@ -33,11 +36,11 @@
     "static/media/artist.jpg": "/the-crafty-animal/static/media/artist.a0acc4a7bd225cb4ffbe.jpg",
     "index.html": "/the-crafty-animal/index.html",
     "main.dfdb0086.css.map": "/the-crafty-animal/static/css/main.dfdb0086.css.map",
-    "main.ea1ac803.js.map": "/the-crafty-animal/static/js/main.ea1ac803.js.map",
+    "main.7864591f.js.map": "/the-crafty-animal/static/js/main.7864591f.js.map",
     "453.e7679c7d.chunk.js.map": "/the-crafty-animal/static/js/453.e7679c7d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.dfdb0086.css",
-    "static/js/main.ea1ac803.js"
+    "static/js/main.7864591f.js"
   ]
 }
