@@ -21,6 +21,7 @@ function Products() {
     });
     const [filterOption, setFilterOption] = useState("");
 
+
     useEffect(() => {
         const timers = [];
         if (numberOfProducts < 150) {
@@ -75,7 +76,6 @@ function Products() {
                 ...prev,
                 category: prev.category.filter(c => c !== "sports")
             }));
-            return; // Exit and let the next useEffect run handle the filtering
         }
 
         const results = productData.filter(item => {
@@ -95,13 +95,36 @@ function Products() {
 
             const schoolMatch = !filters["schools"]?.length ||
                 filters["schools"].some(f => item.School?.includes(f));
-                
+
+            if (filters["states"]?.length > 0) {
+                console.log("State match found for item:", item.Name, "with states:", item.States);
+                item.Image = item.Name + `_${filters["states"][0]}.png`;
+            }
+
             return categoryMatch && stateMatch && teamMatch && schoolMatch;
 
         });
 
+        console.log("Filtered products:", results);
+
         setFilteredProducts(results);
+
     }, [filters, productData]);
+
+    // Add a loading state
+    const [isLoading, setIsLoading] = useState(true);
+
+    // Update the loading state when filteredProducts changes
+    useEffect(() => {
+        if (filteredProducts.length > 0) {
+            setIsLoading(false);
+        }
+    }, [filteredProducts]);
+
+    // Don't render until loading is complete
+    if (isLoading) {
+        return <div className="Products">Loading...</div>;
+    }
 
     return (
         <div className="Products">
@@ -186,9 +209,9 @@ function Products() {
                                     className={filters?.states?.includes(item) ? "active" : ""}
                                     onClick={() => {
                                         if (filters?.states?.includes(item)) {
-                                            setFilters(prev => ({ ...prev, states: prev.states.filter(c => c !== item) }));
+                                            setFilters(prev => ({ ...prev, states: [] }));
                                         } else {
-                                            setFilters(prev => ({ ...prev, states: [...(prev.states || []), item] }));
+                                            setFilters(prev => ({ ...prev, states: [item] }));
                                         }
                                     }}>
                                     {item}
@@ -199,17 +222,16 @@ function Products() {
                 </div>
                 <div className="product-grid">
                     {filteredProducts.map((item, idx) => {
-                        let imgName = item.Name + ".png";
                         return (
                             <div key={idx} className="product-item">
-                                <img src={require(`./img/${imgName}`)} alt={item.Name} />
+                                <img src={require(`./img/${item.Image}`)} alt={item.Name} />
                                 <p>{item.Name}</p>
                             </div>
                         );
                     })}
                 </div>
-            </main >
-        </div >
+            </main>
+        </div>
     );
 }
 
