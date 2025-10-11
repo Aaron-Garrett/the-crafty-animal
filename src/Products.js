@@ -100,6 +100,9 @@ function Products() {
                 console.log("State match found for item:", item.Name, "with states:", item.States);
                 item.Image = item.Name + `_${filters["states"][0]}.png`;
             }
+            else {
+                item.Image = item.Name + `.png`;
+            }
 
             return categoryMatch && stateMatch && teamMatch && schoolMatch;
 
