@@ -9,10 +9,14 @@ function Products() {
     const [numberOfReviews, setNumberOfReviews] = useState(0);
     const [filteredProducts, setFilteredProducts] = useState([]);
     const [productData, setProductData] = useState([]);
+    const [categories, setCategories] = useState([]);
+    const [states, setStates] = useState([]);
+    const [teams, setTeams] = useState([]);
+    const [schools, setSchools] = useState([]);
     const [filters, setFilters] = useState({
         category: [],
-        team: [],
-        school: [],
+        teams: [],
+        schools: [],
         states: []
     });
     const [filterOption, setFilterOption] = useState("");
@@ -46,28 +50,56 @@ function Products() {
     useEffect(() => {
         setProductData(products);
         setFilteredProducts(products);
+        setCategories([...new Set(products.flatMap(product => product.Categories))]);
+        setStates([...new Set(products.flatMap(product => product.States))]);
+        setTeams([...new Set(products.flatMap(product => product.Team))]);
+        setSchools([...new Set(products.flatMap(product => product.School))]);
     }, []);
 
     useEffect(() => {
-        if (!productData || Object.keys(filters).length === 0) return;
+        console.log("Categories available:", categories);
+        console.log("States available:", states);
+    }, [categories, states]);
+
+    useEffect(() => {
+        if (!productData) return;
 
         console.log(`Filters selected:`, filters);
+
+
+        // Handle special category combinations outside the filter
+        if ((filters["category"].includes("college") ||
+            filters["category"].includes("professional")) &&
+            filters["category"].includes("sports")) {
+            setFilters(prev => ({
+                ...prev,
+                category: prev.category.filter(c => c !== "sports")
+            }));
+            return; // Exit and let the next useEffect run handle the filtering
+        }
+
         const results = productData.filter(item => {
-            for (const filter in filters) {
-                if (filters[filter] === "all-categories" || filters[filter] === "all-teams" || filters[filter] === "all-schools" || filters[filter] === "all-states") return true;
-                if ((filters[filter].includes("college") || filters[filter].includes("professional")) && filters[filter].includes("sports")) {
-                    setFilters(prev => ({
-                        ...prev,
-                        category: prev.category.filter(c => c !== "sports")
-                    }));
-                }
-                if (filters[filter].length === 0) continue;
-                if (!filters[filter].some(f => item.Categories.includes(f))) {
-                    return false;
-                }
-            }
-            return true;
+            // Safely check if Categories exists
+            const itemCategories = item.Categories || [];
+
+            // Check category filter
+            const categoryMatch = !filters["category"]?.length ||
+                filters["category"].some(f => itemCategories.includes(f));
+
+            // Check state filter
+            const stateMatch = !filters["states"]?.length ||
+                filters["states"].some(f => item.States?.includes(f));
+
+            const teamMatch = !filters["teams"]?.length ||
+                filters["teams"].some(f => item.Team?.includes(f));
+
+            const schoolMatch = !filters["schools"]?.length ||
+                filters["schools"].some(f => item.School?.includes(f));
+                
+            return categoryMatch && stateMatch && teamMatch && schoolMatch;
+
         });
+
         setFilteredProducts(results);
     }, [filters, productData]);
 
@@ -97,141 +129,72 @@ function Products() {
                 </div>
                 <div className="filter-selection">
                     <div className={filterOption === "category" ? "filter-options selected" : "filter-options"} id="categories">
-                        <button
-                            id="all-categories"
-                            className={filters.category === "all-categories" ? "active" : ""}
-                            onClick={() => setFilters({ category: "all-categories" })}>All Categories</button>
-                        <button id="nature" onClick={() => {
-                            if (filters.category.includes("nature")) {
-                                setFilters({ category: filters.category.filter(c => c !== "nature") });
-                            } else {
-                                setFilters({ category: [...filters.category, "nature"] });
-                            }
-                        }}
-                            className={filters.category.includes("nature") ? "active" : ""}>Nature</button>
-                        <button id="all-sports" onClick={() => {
-                            if (filters.category.includes("sports")) {
-                                setFilters({ category: filters.category.filter(c => c !== "sports") });
-                            } else {
-                                setFilters({ category: [...filters.category, "sports"] });
-                            }
-                        }}
-                            className={filters.category.includes("sports") ? "active" : ""}>All Sports</button>
-                        <button id="college" onClick={() => {
-                            if (filters.category.includes("college")) {
-                                setFilters({ category: filters.category.filter(c => c !== "college") });
-                            } else {
-                                setFilters({ category: [...filters.category, "college"] });
-                            }
-                        }}
-                            className={filters.category.includes("college") ? "active" : ""}>College</button>
-                        <button id="professional" onClick={() => {
-                            if (filters.category.includes("professional")) {
-                                setFilters({ category: filters.category.filter(c => c !== "professional") });
-                            } else {
-                                setFilters({ category: [...filters.category, "professional"] });
-                            }
-                        }}
-                            className={filters.category.includes("professional") ? "active" : ""}>Professional</button>
+                        {categories.map((item, idx) => {
+                            return (
+                                <button key={idx} id={item}
+                                    className={filters?.category?.includes(item) ? "active" : ""}
+                                    onClick={() => {
+                                        if (filters?.category?.includes(item)) {
+                                            setFilters(prev => ({ ...prev, category: prev.category.filter(c => c !== item) }));
+                                        } else {
+                                            setFilters(prev => ({ ...prev, category: [...(prev.category || []), item] }));
+                                        }
+                                    }}>
+                                    {item}
+                                </button>
+                            );
+                        })}
                     </div>
                     <div className={filterOption === "team" ? "filter-options selected" : "filter-options"} id="teams">
-                        <button
-                            id="all-teams"
-                            className={filters.category === "all-teams" ? "active" : ""}
-                            onClick={() => setFilters({ category: "all-teams" })}>All Teams</button>
-                        <button id="hoosiers" onClick={() => {
-                            if (filters.category.includes("hoosiers")) {
-                                setFilters({ category: filters.category.filter(c => c !== "hoosiers") });
-                            } else {
-                                setFilters({ category: [...filters.category, "hoosiers"] });
-                            }
-                        }}
-                            className={filters.category.includes("hoosiers") ? "active" : ""}>Hoosiers</button>
-                        <button id="viking" onClick={() => {
-                            if (filters.category.includes("viking")) {
-                                setFilters({ category: filters.category.filter(c => c !== "viking") });
-                            } else {
-                                setFilters({ category: [...filters.category, "viking"] });
-                            }
-                        }}
-                            className={filters.category.includes("viking") ? "active" : ""}>Vikings</button>
-                        <button id="elephants" onClick={() => {
-                            if (filters.category.includes("elephants")) {
-                                setFilters({ category: filters.category.filter(c => c !== "elephants") });
-                            } else {
-                                setFilters({ category: [...filters.category, "elephants"] });
-                            }
-                        }}
-                            className={filters.category.includes("elephants") ? "active" : ""}>Elephants</button>
-                        <button id="packers" onClick={() => {
-                            if (filters.category.includes("packers")) {
-                                setFilters({ category: filters.category.filter(c => c !== "packers") });
-                            } else {
-                                setFilters({ category: [...filters.category, "packers"] });
-                            }
-                        }}
-                            className={filters.category.includes("packers") ? "active" : ""}>Packers</button>
+                        {teams.map((item, idx) => {
+                            return (
+                                <button key={idx} id={item}
+                                    className={filters?.teams?.includes(item) ? "active" : ""}
+                                    onClick={() => {
+                                        if (filters?.teams?.includes(item)) {
+                                            setFilters(prev => ({ ...prev, teams: prev.teams.filter(c => c !== item) }));
+                                        } else {
+                                            setFilters(prev => ({ ...prev, teams: [...(prev.teams || []), item] }));
+                                        }
+                                    }}>
+                                    {item}
+                                </button>
+                            );
+                        })}
                     </div>
                     <div className={filterOption === "schools" ? "filter-options selected" : "filter-options"} id="schools">
-                        <button
-                            id="all-schools"
-                            className={filters.category === "all-schools" ? "active" : ""}
-                            onClick={() => setFilters({ category: "all-schools" })}>All Schools</button>
-                        <button id="iu" onClick={() => {
-                            if (filters.category.includes("iu")) {
-                                setFilters({ category: filters.category.filter(c => c !== "iu") });
-                            } else {
-                                setFilters({ category: [...filters.category, "iu"] });
-                            }
-                        }}
-                            className={filters.category.includes("iu") ? "active" : ""}>IU</button>
-                        <button id="alabama-state" onClick={() => {
-                            if (filters.category.includes("alabama-state")) {
-                                setFilters({ category: filters.category.filter(c => c !== "alabama-state") });
-                            } else {
-                                setFilters({ category: [...filters.category, "alabama-state"] });
-                            }
-                        }}
-                            className={filters.category.includes("alabama-state") ? "active" : ""}>Alabama State</button>
+                        {schools.map((item, idx) => {
+                            return (
+                                <button key={idx} id={item}
+                                    className={filters?.schools?.includes(item) ? "active" : ""}
+                                    onClick={() => {
+                                        if (filters?.schools?.includes(item)) {
+                                            setFilters(prev => ({ ...prev, schools: prev.schools.filter(c => c !== item) }));
+                                        } else {
+                                            setFilters(prev => ({ ...prev, schools: [...(prev.schools || []), item] }));
+                                        }
+                                    }}>
+                                    {item}
+                                </button>
+                            );
+                        })}
                     </div>
                     <div className={filterOption === "states" ? "filter-options selected" : "filter-options"} id="states">
-                        <button
-                            id="all-states"
-                            className={filters.category === "all-states" ? "active" : ""}
-                            onClick={() => setFilters({ category: "all-states" })}>All States</button>
-                        <button id="indiana" onClick={() => {
-                            if (filters.category.includes("indiana")) {
-                                setFilters({ category: filters.category.filter(c => c !== "indiana") });
-                            } else {
-                                setFilters({ category: [...filters.category, "indiana"] });
-                            }
-                        }}
-                            className={filters.category.includes("indiana") ? "active" : ""}>Indiana</button>
-                        <button id="alabama" onClick={() => {
-                            if (filters.category.includes("alabama")) {
-                                setFilters({ category: filters.category.filter(c => c !== "alabama") });
-                            } else {
-                                setFilters({ category: [...filters.category, "alabama"] });
-                            }
-                        }}
-                            className={filters.category.includes("alabama") ? "active" : ""}>Alabama</button>
-                            <button id="ohio" onClick={() => {
-                            if (filters.category.includes("ohio")) {
-                                setFilters({ category: filters.category.filter(c => c !== "ohio") });
-                            } else {
-                                setFilters({ category: [...filters.category, "ohio"] });
-                            }
-                        }}
-                            className={filters.category.includes("ohio") ? "active" : ""}>Ohio</button>
-                            <button id="kentucky" onClick={() => {
-                            if (filters.category.includes("kentucky")) {
-                                setFilters({ category: filters.category.filter(c => c !== "kentucky") });
-                            } else {
-                                setFilters({ category: [...filters.category, "kentucky"] });
-                            }
-                        }}
-                            className={filters.category.includes("kentucky") ? "active" : ""}>Kentucky</button>
-                            
+                        {states.map((item, idx) => {
+                            return (
+                                <button key={idx} id={item}
+                                    className={filters?.states?.includes(item) ? "active" : ""}
+                                    onClick={() => {
+                                        if (filters?.states?.includes(item)) {
+                                            setFilters(prev => ({ ...prev, states: prev.states.filter(c => c !== item) }));
+                                        } else {
+                                            setFilters(prev => ({ ...prev, states: [...(prev.states || []), item] }));
+                                        }
+                                    }}>
+                                    {item}
+                                </button>
+                            );
+                        })}
                     </div>
                 </div>
                 <div className="product-grid">
@@ -245,8 +208,8 @@ function Products() {
                         );
                     })}
                 </div>
-            </main>
-        </div>
+            </main >
+        </div >
     );
 }
 

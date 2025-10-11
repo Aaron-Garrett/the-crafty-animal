@@ -1,10 +1,13 @@
 [
-    {"Name": "GoingFishing", "States": ["Indiana", "Kentucky", "Ohio"], "Categories": ["nature", "fishing", "all-products", "indiana", "kentucky"]},
-    {"Name": "HometownRoots", "States": ["Indiana", "Kentucky", "Ohio"], "Categories": ["iu", "sports", "college", "all-products", "hoosiers", "indiana"]},
-    {"Name": "IU_Football", "States": ["Indiana", "Kentucky", "Ohio"], "Categories": ["iu", "sports", "college", "all-products", "hoosiers", "indiana"]},
-    {"Name": "Cardinal", "States": ["Indiana", "Kentucky", "Ohio"], "Categories": ["nature", "birds", "all-products", "indiana", "kentucky"]},
-    {"Name": "Eagle", "States": ["Indiana", "Kentucky", "Ohio"], "Categories": ["sports", "professional", "all-products", "eagles", "california", "indiana", "ohio"]},
-    {"Name": "Vikings", "States": ["Indiana", "Kentucky", "Ohio"], "Categories": ["sports", "professional", "all-products", "viking", "indiana", "kentucky", "minnesota"]},
-    {"Name": "RollTide", "States": ["Indiana", "Kentucky", "Alabama"], "Categories": ["college", "sports", "all-products", "elephants", "indiana", "alabama", "alabama-state"]},
-    {"Name": "Packers", "States": ["Indiana", "Wisconsin"], "Categories": ["sports", "professional", "all-products", "packers", "indiana", "wisconsin"]}
+    {"Name": "Fishing", "States": ["Indiana", "Illinois", "Ohio", "All-States"], "Team": [], "School": [], "Categories": ["Nature", "Fishing", "All-Products"]},
+    {"Name": "HometownRoots", "States": ["Indiana", "Kentucky", "Ohio", "All-States"], "Team": ["Hoosiers"], "School": ["IU"], "Categories": ["Sports", "College", "All-Products"]},
+    {"Name": "IU_Football", "States": ["Indiana", "Kentucky", "Ohio", "All-States"], "Team": ["Hoosiers"], "School": ["IU"], "Categories": ["Sports", "College", "All-Products"]},
+    {"Name": "Cardinal", "States": ["Indiana", "Kentucky", "Ohio", "All-States"], "Team": [], "School": [], "Categories": ["Nature", "Birds", "All-Products"]},
+    {"Name": "Eagles", "States": ["Washington", "All-States"], "Team": ["Eagles"], "School": [], "Categories": ["Sports", "Professional", "All-Products"]},
+    {"Name": "Vikings", "States": ["Minnesota", "All-States"], "Team": ["Vikings"], "School": [], "Categories": ["Sports", "Professional", "All-Products"]},
+    {"Name": "RollTide", "States": ["Alabama", "All-States"], "Team": ["Elephants"], "School": ["Alabama-State"], "Categories": ["College", "Sports", "All-Products"]},
+    {"Name": "Packers", "States": ["Wisconsin", "All-States"], "Team": ["Packers"], "School": [], "Categories": ["Sports", "Professional", "All-Products"]},
+    {"Name": "Drink_Local", "States": ["Indiana", "Illinois", "Alabama", "Iowa", "All-States"], "Team": [], "School": [], "Categories": ["Drinking", "All-Products"]},
+    {"Name": "Wine_Pour", "States": ["Alabama", "Georgia", "Illinois", "Texas", "All-States"], "Team": [], "School": [], "Categories": ["Drinking", "All-Products"]},
+    {"Name": "Hunting", "States": ["Illinois", "Ohio", "All-States"], "Team": [], "School": [], "Categories": ["Nature", "Hunting", "All-Products"]}
 ]
