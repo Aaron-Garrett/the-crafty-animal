@@ -228,7 +228,7 @@ function Products() {
                         return (
                             <div key={idx} className="product-item">
                                 <img src={require(`./img/${item.Image}`)} alt={item.Name} />
-                                <p>{item.Name}</p>
+                                <p className="item-name">{item.Name}</p>
                             </div>
                         );
                     })}

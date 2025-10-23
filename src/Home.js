@@ -56,14 +56,16 @@ function Home() {
                 </article>
                 <article>
                     <h2>About the Artist</h2>
-                    <img src={(require('./img/artist.jpg'))} alt="Artist" />
-                    <p>Audwynn Newman is a talented artist with a degree from
-                        the University of Ohio. He has worked for both DC and Marvel comics
-                        and worked on some animation for films, such as "Tiny Soldiers."
-                        He was working for a corporation when he had a stroke. After using art to
-                        recover his manual dexterity, he decided to pursue his passion for art full-time.
-                        You can learn more on the <a href="./">About Me</a> page.
-                    </p>
+                    <div className="about-artist">
+                        <img src={(require('./img/artist.jpg'))} alt="Artist" />
+                        <p>Audwynn Newman is a talented artist with a degree from
+                            the University of Ohio. He has worked for both DC and Marvel comics
+                            and worked on some animation for films, such as "Tiny Soldiers."
+                            He was working for a corporation when he had a stroke. After using art to
+                            recover his manual dexterity, he decided to pursue his passion for art full-time.
+                            You can learn more on the <a href="./">About Me</a> page.
+                        </p>
+                    </div>
                 </article>
                 <article>
                     <h2>Featured Items</h2>

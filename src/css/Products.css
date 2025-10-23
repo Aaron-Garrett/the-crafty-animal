@@ -10,8 +10,11 @@ header {
     margin: 24px 0;
     max-height: 50vh;
     object-fit: scale-down;
-    display: block; /* Ensures block-level behavior */
-    padding: 12px 0; /* Adds internal spacing */
+    display: block;
+    /* Ensures block-level behavior */
+    padding: 12px 0;
+    /* Adds internal spacing */
+    position: relative;
 }
 
 .product-item img {
@@ -21,7 +24,8 @@ header {
 
 /* Add this if the parent is using display: flex or grid */
 .product-grid {
-    gap: 24px; /* Creates space between flex/grid items */
+    gap: 24px;
+    /* Creates space between flex/grid items */
     display: grid;
     grid-template-columns: repeat(2, 1fr);
 }
@@ -57,6 +61,29 @@ button {
     padding: 7px;
 }
 
+.item-name {
+    font-size: 2rem;
+    display: none;
+    position: absolute;
+    top: 2.5%;
+    left: 0;
+    justify-content: center;
+    align-items: center;
+    height: 95%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    /* background: rgba(0, 0, 0, 0.7); */
+    color: white;
+    padding: 8px;
+    margin: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.product-item:hover .item-name {
+    display: flex;
+}
+
 .filter-options {
     display: none;
     justify-content: center;
@@ -71,4 +98,10 @@ button {
 .filter-options#schools.selected,
 .filter-options#states.selected {
     display: flex;
+}
+
+@media (min-width: 768px) {
+    .product-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
 }
